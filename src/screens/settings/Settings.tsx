@@ -68,7 +68,7 @@ function Index() {
         <Row icon="download" title="Données" subtitle={s.lastBackupAt ? `Dernière sauvegarde le ${formatDate(s.lastBackupAt, 'long')}` : 'Jamais sauvegardé'} onClick={() => navigate('/reglages/donnees')} />
         <Row icon="file" title="Import Revolut" subtitle="Relevé CSV, catégorisation automatique" onClick={() => navigate('/import')} />
       </Card>
-      <p className="mt-10 text-center text-xs text-faint">Hyppo Patrimoine · données stockées uniquement sur cet appareil</p>
+      <p className="mt-10 text-center text-xs text-faint">Sésame · données stockées uniquement sur cet appareil</p>
     </Page>
   );
 }

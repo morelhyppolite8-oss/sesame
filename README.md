@@ -1,4 +1,4 @@
-# Hyppo Patrimoine
+# Sésame
 
 Le cockpit de ta vie financière. Chaque euro reçu a un rôle, décidé par tes règles et pas par l'humeur du moment.
 
@@ -27,22 +27,22 @@ npm install
 npm run dev
 ```
 
-Ouvre ensuite <http://localhost:3000/hyppo-patrimoine/>.
+Ouvre ensuite <http://localhost:3000/sesame/>.
 
 | Commande | Rôle |
 |---|---|
 | `npm run test` | Tests du moteur et de la base (Vitest) |
 | `npm run build` | Vérification TypeScript et version de production dans `dist/` |
-| `npm run preview` | Sert la version de production sur <http://localhost:4173/hyppo-patrimoine/> |
+| `npm run preview` | Sert la version de production sur <http://localhost:4173/sesame/> |
 | `npm run e2e` | Compile, puis lance les tests de bout en bout Playwright (format iPhone) |
 | `npm run icons` | Régénère les icônes de l'appli |
 
 ## 2. Mise en ligne : GitHub Pages
 
-À chaque push sur `main`, le workflow `.github/workflows/deploy.yml` installe les dépendances, lance les tests, compile, puis publie `dist/` sur GitHub Pages. L'appli est servie sous `https://<pseudo>.github.io/hyppo-patrimoine/` :
+À chaque push sur `main`, le workflow `.github/workflows/deploy.yml` installe les dépendances, lance les tests, compile, puis publie `dist/` sur GitHub Pages. L'appli est servie sous `https://<pseudo>.github.io/sesame/` :
 - le chemin de base est réglé dans `vite.config.ts` ;
 - la navigation passe par l'ancre de l'adresse (`#/mois`…), ce qui évite tout besoin de réécriture d'URL ;
-- le manifeste et le service worker de la PWA sont limités à `/hyppo-patrimoine/`.
+- le manifeste et le service worker de la PWA sont limités à `/sesame/`.
 
 Si tu renommes le dépôt, change la constante `BASE` dans `vite.config.ts`.
 
@@ -50,7 +50,7 @@ Si tu renommes le dépôt, change la constante `BASE` dans `vite.config.ts`.
 
 1. Ouvre l'adresse de l'appli dans **Safari**.
 2. Touche **Partager**, puis **Sur l'écran d'accueil**, puis **Ajouter**.
-3. Lance Hyppo depuis l'icône : l'appli s'ouvre en plein écran et fonctionne ensuite **hors ligne**.
+3. Lance Sésame depuis l'icône : l'appli s'ouvre en plein écran et fonctionne ensuite **hors ligne**.
 
 Les données de l'icône de l'écran d'accueil sont distinctes de celles de l'onglet Safari.
 

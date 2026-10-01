@@ -1,6 +1,6 @@
 /*
  * Tests publics de bout en bout, sur les valeurs d'EXEMPLE de l'assistant (aucune donnée personnelle).
- * L'appli est servie sous /hyppo-patrimoine/, comme sur GitHub Pages.
+ * L'appli est servie sous /sesame/, comme sur GitHub Pages.
  */
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
@@ -36,7 +36,7 @@ test.beforeAll(async ({ browser }) => {
 
 test('assistant du premier lancement', async () => {
   await page.goto('./');
-  await expect(page.getByRole('heading', { name: 'Hyppo Patrimoine' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Sésame' })).toBeVisible();
   await page.getByRole('button', { name: 'Commencer' }).click();
   await tapPin(page);
   await expect(page.getByRole('heading', { name: 'Confirme ton code' })).toBeVisible();

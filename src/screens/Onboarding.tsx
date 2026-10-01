@@ -52,7 +52,7 @@ function Welcome({ onNext }: { onNext: () => void }) {
           <Monogram size={72} />
         </div>
         <p className="eyebrow mt-8">Bienvenue</p>
-        <h1 className="mt-3 font-serif text-[2.75rem] leading-[1.05] text-ink">Hyppo Patrimoine</h1>
+        <h1 className="mt-3 font-serif text-[2.75rem] leading-[1.05] text-ink">Sésame</h1>
         <p className="mx-auto mt-4 max-w-xs text-[0.9375rem] leading-relaxed text-muted">
           Le cockpit de ta vie financière. Sobre, précis, et toujours de ton côté.
         </p>

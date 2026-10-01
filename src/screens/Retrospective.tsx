@@ -49,7 +49,7 @@ export default function Retrospective({ year }: { year: number }) {
       ) : (
         <article className="card overflow-hidden p-6 md:p-8">
           <header className="text-center">
-            <p className="eyebrow">Hyppo Patrimoine · Rapport de gestion</p>
+            <p className="eyebrow">Sésame · Rapport de gestion</p>
             <p className="mt-4 font-serif text-[4.5rem] leading-none text-gold">{year}</p>
             <GoldLine className="mx-auto mt-4 max-w-[12rem]" />
             <p className="mx-auto mt-4 max-w-sm font-serif text-lg leading-snug text-muted italic">

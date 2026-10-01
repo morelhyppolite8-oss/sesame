@@ -15,5 +15,5 @@ export function readFileText(file: File): Promise<string> {
   return file.text();
 }
 
-/** Adresse de l'appli (avec son chemin de base, ex. `/hyppo-patrimoine/`). */
+/** Adresse de l'appli (avec son chemin de base, ex. `/sesame/`). */
 export const appUrl = (): string => new URL(import.meta.env.BASE_URL, window.location.origin).href;

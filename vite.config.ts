@@ -3,8 +3,8 @@ import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vitest/config';
 
-/** Publication sur GitHub Pages : https://<pseudo>.github.io/hyppo-patrimoine/ */
-const BASE = '/hyppo-patrimoine/';
+/** Publication sur GitHub Pages : https://<pseudo>.github.io/sesame/ */
+const BASE = '/sesame/';
 
 export default defineConfig({
   base: BASE,
@@ -18,8 +18,8 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
         id: BASE,
-        name: 'Hyppo Patrimoine',
-        short_name: 'Hyppo',
+        name: 'Sésame',
+        short_name: 'Sésame',
         description: 'Le cockpit de ta vie financière : chaque euro reçu a un rôle, décidé par tes règles.',
         lang: 'fr',
         dir: 'ltr',

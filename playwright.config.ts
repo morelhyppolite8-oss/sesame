@@ -10,7 +10,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['list']],
   use: {
-    baseURL: 'http://localhost:4173/hyppo-patrimoine/',
+    baseURL: 'http://localhost:4173/sesame/',
     serviceWorkers: 'block',
     trace: 'retain-on-failure',
     locale: 'fr-FR',
@@ -19,7 +19,7 @@ export default defineConfig({
   projects: [{ name: 'iPhone 14', use: { ...devices['iPhone 14'] } }],
   webServer: {
     command: 'node node_modules/vite/bin/vite.js preview --port 4173 --strictPort',
-    url: 'http://localhost:4173/hyppo-patrimoine/',
+    url: 'http://localhost:4173/sesame/',
     reuseExistingServer: true,
   },
 });

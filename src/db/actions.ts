@@ -546,6 +546,7 @@ export async function deleteBankMonth(month: Month): Promise<void> {
 export const BACKUP_VERSION = 1;
 
 export interface Backup {
+  /** Identifiant interne inchangé pour rester compatible avec les anciennes sauvegardes. */
   app: 'hyppo-patrimoine';
   version: number;
   exportedAt: string;
@@ -565,7 +566,7 @@ export async function exportBackup(): Promise<Backup> {
 export function validateBackup(raw: unknown): Backup {
   const b = raw as Partial<Backup>;
   if (!b || typeof b !== 'object' || b.app !== 'hyppo-patrimoine') {
-    throw new Error("Ce fichier n'est pas une sauvegarde Hyppo Patrimoine.");
+    throw new Error("Ce fichier n'est pas une sauvegarde Sésame.");
   }
   if (typeof b.version !== 'number' || b.version > BACKUP_VERSION) {
     throw new Error('Cette sauvegarde vient d’une version plus récente de l’appli.');

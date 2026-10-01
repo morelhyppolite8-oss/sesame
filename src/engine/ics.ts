@@ -50,7 +50,7 @@ export function monthlyReviewIcs(opts: MonthlyReminder): string {
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Hyppo Patrimoine//Revue mensuelle//FR',
+    'PRODID:-//Sésame//Revue mensuelle//FR',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VTIMEZONE',
@@ -76,7 +76,7 @@ export function monthlyReviewIcs(opts: MonthlyReminder): string {
     `DTSTART;TZID=Europe/Paris:${start}`,
     `DTEND;TZID=Europe/Paris:${end}`,
     `RRULE:FREQ=MONTHLY;BYMONTHDAY=${opts.day}`,
-    `SUMMARY:${escape('Revue mensuelle · Hyppo Patrimoine')}`,
+    `SUMMARY:${escape('Revue mensuelle · Sésame')}`,
     `DESCRIPTION:${escape('Dix minutes pour comparer le prévu au réel, décider des reliquats et ajuster le mois suivant.')}`,
     ...(opts.url ? [`URL:${opts.url}`] : []),
     'BEGIN:VALARM',
@@ -167,7 +167,7 @@ export function subscriptionsIcs(
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Hyppo Patrimoine//Abonnements//FR',
+    'PRODID:-//Sésame//Abonnements//FR',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'X-WR-CALNAME:Abonnements',

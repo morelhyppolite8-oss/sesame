@@ -5,5 +5,5 @@ import { downloadFile } from './files';
 /** Télécharge une sauvegarde JSON complète et note la date de sauvegarde. */
 export async function downloadBackup(): Promise<void> {
   const backup = await exportBackup();
-  downloadFile(`hyppo-patrimoine-${toISODate(new Date())}.json`, JSON.stringify(backup, null, 2), 'application/json');
+  downloadFile(`sesame-${toISODate(new Date())}.json`, JSON.stringify(backup, null, 2), 'application/json');
 }
