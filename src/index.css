@@ -1,0 +1,206 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+@theme {
+  --font-serif: 'Cormorant Garamond', 'Iowan Old Style', 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', -apple-system, 'SF Pro Text', system-ui, sans-serif;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-gold: var(--gold);
+  --color-gold-ink: var(--gold-ink);
+  --color-gold-soft: var(--gold-soft);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-overlay: var(--overlay);
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root,
+[data-theme='dark'] {
+  --bg: #0b0b0c;
+  --surface: #16161a;
+  --raised: #1d1d22;
+  --ink: #f2efe8;
+  --muted: #a39f96;
+  --faint: #8e8a83;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.16);
+  --gold: #c9a96e;
+  --gold-ink: #0b0b0c;
+  --gold-soft: rgb(201 169 110 / 0.12);
+  --positive: #9cc3a6;
+  --negative: #e0a291;
+  --overlay: rgb(0 0 0 / 0.6);
+  --grain-opacity: 0.035;
+  --chart-neutral: #8a867e;
+  --cat-1: #3987e5;
+  --cat-2: #d95926;
+  --cat-3: #199e70;
+  --cat-4: #c98500;
+  --cat-5: #d55181;
+  --cat-6: #008300;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 12px 32px -18px rgb(0 0 0 / 0.8);
+  color-scheme: dark;
+}
+
+[data-theme='ivory'] {
+  --bg: #f7f4ee;
+  --surface: #fffdf9;
+  --raised: #efeae1;
+  --ink: #1b1a18;
+  --muted: #625d55;
+  --faint: #6b665e;
+  --line: rgb(27 26 24 / 0.1);
+  --line-strong: rgb(27 26 24 / 0.2);
+  --gold: #86652c;
+  --gold-ink: #fffdf9;
+  --gold-soft: rgb(134 101 44 / 0.1);
+  --positive: #3f6e4b;
+  --negative: #a4452f;
+  --overlay: rgb(27 26 24 / 0.35);
+  --grain-opacity: 0.025;
+  --chart-neutral: #8d877d;
+  --cat-1: #2a78d6;
+  --cat-2: #eb6834;
+  --cat-3: #1baf7a;
+  --cat-4: #eda100;
+  --cat-5: #e87ba4;
+  --cat-6: #008300;
+  --shadow: 0 12px 32px -20px rgb(60 45 20 / 0.35);
+  color-scheme: light;
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Grain très léger. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-serif {
+  font-feature-settings: 'lnum', 'pnum';
+  letter-spacing: 0.005em;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.hairline {
+  border-color: var(--line);
+}
+
+/* Mode discret : tous les montants sont floutés. */
+.amount {
+  transition: filter 0.35s var(--ease-lux);
+}
+html.discreet .amount,
+html.shielded .amount {
+  filter: blur(9px);
+}
+html.discreet input.amount-input {
+  filter: blur(9px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input[type='date'] {
+  min-height: 44px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: var(--date-filter, none);
+}
+[data-theme='dark'] input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+.safe-top {
+  padding-top: max(env(safe-area-inset-top), 0.75rem);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
